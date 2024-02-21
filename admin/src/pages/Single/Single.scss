@@ -1,0 +1,86 @@
+@import "styles/abstracts/variables";
+@import "styles/abstracts/mixins";
+
+.single {
+  display: flex;
+  flex: 1;
+
+  .single-content {
+    flex: 6;
+    margin-left: 10.25rem;
+
+    .top {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem;
+
+      .top-left {
+        @include box;
+        @include flex-direction-column;
+        flex: 2;
+        gap: 1rem;
+        position: relative;
+
+        .edit-btn {
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 0.8rem;
+          padding: 0.2rem;
+          color: $primary-clr-1;
+          background-color: rgba($color: crimson, $alpha: 0.3);
+          border-radius: 0rem $primary-br 0rem;
+          cursor: pointer;
+        }
+
+        h4 {
+          @include heading;
+          font-size: 1rem;
+        }
+
+        .profile {
+          display: flex;
+          gap: 1rem;
+
+          .profile-img {
+            img {
+              width: 7rem;
+              height: 7rem;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+
+          .profile-info {
+            @include flex-direction-column;
+            gap: 0.5rem;
+
+            h1 {
+              font-size: 2rem;
+              color: $primary-clr-1;
+            }
+
+            .info-item {
+              display: flex;
+              gap: 0.3rem;
+              font-size: 0.9rem;
+              color: $primary-clr-2;
+
+              .item__key {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+      .top-right {
+        flex: 4;
+      }
+    }
+
+    .bottom {
+      padding: $secondary-pd;
+    }
+  }
+}

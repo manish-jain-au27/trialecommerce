@@ -1,0 +1,86 @@
+@import "styles/abstracts/mixins";
+@import "styles/abstracts/variables";
+
+.sidebar {
+  flex: 1;
+  border-right: 2px solid $primary-clr-3;
+  min-height: 100vh;
+  background-color: $primary-clr-4;
+  position: fixed;
+
+  .top {
+    display: grid;
+    place-items: center;
+    padding: 0.5rem 0rem;
+
+    img {
+      width: 5rem;
+    }
+  }
+
+  hr {
+    border: 0.5px solid $primary-clr-3;
+  }
+
+  .center {
+    @include flex-direction-column;
+    gap: 0.8rem;
+    padding: $primary-pd;
+
+    h4 {
+      @include heading;
+      margin-bottom: 0.3rem;
+    }
+
+    ul {
+      @include flex-direction-column;
+      gap: 0.2rem;
+
+      li {
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        padding: 0.2rem 0.5rem;
+        font-size: $secondary-fs;
+        color: $primary-clr;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        .icon {
+          color: $secondary-clr;
+          font-size: $tertiary-fs;
+        }
+
+        &:hover {
+          background-color: $primary-clr-3;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding: 0rem 0.8rem;
+
+    h4 {
+      @include heading;
+      margin: 0.5rem 0rem;
+    }
+
+    .bottom__theme {
+      display: flex;
+      gap: 0.8rem;
+      padding-left: 0.5rem;
+
+      .theme--light {
+        @include theme;
+        background-color: $primary-clr-4;
+      }
+
+      .theme--dark {
+        @include theme;
+        background-color: $primary-clr;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import "styles/abstracts/variables";
+@import "styles/abstracts/mixins";
+
+.widgets {
+  @include flex-direction-column;
+  @include box;
+  justify-content: space-between;
+  flex: 1;
+  gap: 1rem;
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      @include heading;
+      font-size: 1rem;
+    }
+
+    .top-percentage {
+      display: flex;
+      align-items: center;
+
+      &.increase {
+        color: green;
+      }
+
+      &.decrease {
+        color: red;
+      }
+
+      span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &-center {
+    font-size: 2rem;
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      font-size: $primary-fs;
+      color: $primary-clr-1;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  .widget-icon {
+    font-size: 1.8rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+  }
+}
